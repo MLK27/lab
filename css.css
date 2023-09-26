@@ -151,7 +151,7 @@ display: inline;
 /* Article Styles */
 
 .article {
-    min-height: 120vh;
+    min-height: 100%;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: min-content 1fr;

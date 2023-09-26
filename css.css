@@ -4,7 +4,8 @@ body {
     display: grid;
     height: 100vh;
     grid-template-areas: " sidebar nav nav nav" "sidebar article article article" ;
-    grid-template-rows: 4rem 1fr 1fr 1fr;
+    grid-template-columns: 4rem auto; /* Adjusted to have a fixed sidebar width and the rest auto */
+    grid-template-rows: 1rem 1fr 1fr 1fr;
     /* Font families for different elements */
     font-family: 'Montserrat', sans-serif;
     font-family: 'Press Start 2P', cursive;
@@ -14,9 +15,10 @@ body {
 
 /* Sidebar Styles */
 .sidebar {
+    height: max-content;
     grid-area: sidebar;
     width: 4rem;
-    height: 200vh;
+    height: 100%;
     position: fixed;
     transition: width 0.3s ease-in;
     color: white;
@@ -61,17 +63,19 @@ display: inline;
     height: 20px;
 }
 .sidebar:hover ~ .right-section{
-    margin-left: 14rem;
+    margin-left: 10rem;
     }
-    .right-section{
-        margin-left: 4rem;
-        transition: margin-left 0.3s ease-in;
-    }
+    
 /* Right Section  Styles */
+.right-section{
+    margin-bottom: 0;
+    grid-area: article;
+    height:100%;
+    transition: margin-left 0.3s ease-in;
+}
 .navbar {
     grid-area: nav;
     display:grid;
-    padding-top: 15px;
     background-color: white;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -102,7 +106,7 @@ display: inline;
     gap: 15px;
 }
 
-button {
+.button {
     width: 100px;
     height: 35px;
     color: white;
@@ -136,7 +140,7 @@ button {
     padding: 0 25px 0 10px;
 }
 
-input {
+.input {
     border: 0.5px solid rgba(121, 138, 235, 0.3);
     background-color: rgba(121, 138, 235, 0.3);
     width: 550px;
@@ -147,14 +151,13 @@ input {
 /* Article Styles */
 
 .article {
-    grid-area: article;
+    min-height: 120vh;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: min-content 1fr;
     grid-template-rows: min-content 1fr;
     background-color: rgb(180, 181, 197, 0.3);
     padding-bottom: 80px;
-    overflow: auto;
     grid-template-areas: "projects announcements" "projects trending";
 }
 
@@ -172,6 +175,8 @@ input {
 }
 
 .project-icons {
+    padding-top: 10px;
+    padding-bottom: 10px;
     gap: 20px;
     display: flex;
     justify-content: flex-end;
@@ -212,8 +217,10 @@ input {
 /* Right Article Styles */
 
 .right-aricle {
+    height: 100vh;
     width: fit-content;
     padding-top: 20px;
+    padding-right: 50px;
 }
 
 .news-container,
@@ -237,6 +244,7 @@ input {
     grid-area: projects;
 }
 .popular-section{
+    margin-top: 25px;
     width: 420px;
     grid-area: trending;
 }
@@ -254,7 +262,32 @@ h3, h2 {
 /* Remove blue color from visited links */
 a{
     text-decoration: none;
-}
-a:visited {
     color: inherit;
+}
+#library{
+    display: grid;
+    padding: 45px;
+    gap:45px
+}
+
+form{
+    background-color: rgba(233, 229, 229, 0);
+    display: flex;
+    border: 1px solid rgba(233, 229, 229, 0);;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 20px 15px;
+    text-align: center;
+}
+form p{
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 5px 0;
+}
+form div{
+    padding: 10px 0;
+}
+.submit{
+    border-radius: 10px;
+    width:100%
 }

@@ -23,7 +23,11 @@
     <div class="sidebar">
       <div class="sidebar-section">
         <a class="dashboard-item">
-          <i class="fa-solid fa-coins" style="color: #f7f7f7"></i>
+          <i
+            class="fa-solid fa-coins"
+            style="color: #f7f7f7"
+            href="index.html"
+          ></i>
           <p>Dashboard</p>
         </a>
       </div>
@@ -73,7 +77,7 @@
         <div class="top-bar">
           <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" />
+            <input class="input" type="text" />
           </div>
           <div class="notification">
             <i class="fa-solid fa-bell"></i>
@@ -98,69 +102,156 @@
             </div>
           </div>
           <div class="action-buttons">
-            <button>New</button><button>Uplaod</button><button>Share</button>
+            <button class="button new">Add book</button>
+            <button class="button">Uplaod</button>
+            <button class="button">Share</button>
           </div>
         </div>
       </div>
-    </div>
-    <div class="boooks">
-      <main class="content">
-        <div class="projects">
-          <h3>Your Books</h3>
-          <div class="books cards">
-            <!-- Section for all project cards -->
+      <div class="article">
+        <div class="left-article">
+          <p class="section-title">Your Books</p>
+          <div class="project-list">
+            <div class="books cards project-list">
+              <!-- Section for all project cards -->
+            </div>
+          </div>
+          <div class="modal" id="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <div class="modal-form">
+                <h1 class="form-title"></h1>
+                <form class="add-book-form">
+                  <div class="modal-input-field">
+                    <label for="book-title" class="custom-label">Title:</label>
+                    <input
+                      type="text"
+                      name="book-title"
+                      id="book-title"
+                      class="modal-form-input"
+                      required
+                    />
+                  </div>
+                  <div class="modal-input-field">
+                    <label for="book-author" class="custom-label"
+                      >Author:</label
+                    >
+                    <input
+                      type="text"
+                      name="book-author"
+                      id="book-author"
+                      class="modal-form-input"
+                      required
+                    />
+                  </div>
+                  <div class="modal-input-field">
+                    <label for="book-pages" class="custom-label">Pages:</label>
+                    <input
+                      type="number"
+                      min="0"
+                      name="book-pages"
+                      id="book-pages"
+                      class="modal-form-input"
+                      required
+                    />
+                  </div>
+                  <div class="modal-input-field">
+                    <span class="modal-read custom-label">Read?</span>
+                    <label class="container">
+                      <input
+                        type="checkbox"
+                        name="book-read"
+                        id="book-read"
+                        class="checkmark"
+                      />
+                    </label>
+                  </div>
+                  <div class="submit-modal-form">
+                    <button
+                      type="submit"
+                      class="btn form-add-button button"
+                    ></button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-      </main>
-      <div class="modal" id="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <div class="modal-form">
-            <h1 class="form-title"></h1>
-            <form class="add-book-form">
-              <div class="modal-input-field">
-                <label for="book-title">Title:</label>
-                <input
-                  type="text"
-                  name="book-title"
-                  id="book-title"
-                  class="modal-form-input"
-                />
+        <div class="right-aricle">
+          <div class="news-section">
+            <p class="section-title">Announcements</p>
+            <div class="news-container">
+              <div class="news-item">
+                <h3>Site Maintenance</h3>
+                <p>
+                  Vestibulum condimentum tellus lacus, in accumsan elit maximus
+                  ac. Done hendrerit sodales conque..
+                </p>
+                <hr />
+                <h3>Community Share Day</h3>
+                <p>
+                  Nam vel lectus tincidunt, rutrum nulla eu, ornare libero.
+                  Aliquam dictum accumsan porttitor...
+                </p>
+                <hr />
+                <h3>Updated Privacy Policy</h3>
+                <p>
+                  Phasellus efficitur nisi get elit consectetur, get condimentum
+                  ante auctor. Cras fringilla sagittis sem in mattis...
+                </p>
               </div>
-              <div class="modal-input-field">
-                <label for="book-author">Author:</label>
-                <input
-                  type="text"
-                  name="book-author"
-                  id="book-author"
-                  class="modal-form-input"
-                />
-              </div>
-              <div class="modal-input-field">
-                <label for="book-pages">Pages:</label>
-                <input
-                  type="number"
-                  min="0"
-                  name="book-pages"
-                  id="book-pages"
-                  class="modal-form-input"
-                />
-              </div>
-              <div class="modal-input-field">
-                <span class="modal-read">Read?</span>
-                <label class="container">
-                  <input
-                    type="checkbox"
-                    name="book-read"
-                    id="book-read"
-                    class="checkmark"
+            </div>
+          </div>
+          <div class="popular-section">
+            <p class="section-title">Trending</p>
+            <div class="popular-container">
+              <div class="popular-item">
+                <div class="user-profile">
+                  <img
+                    src="dashboard-project - Copy (3).png"
+                    class="profile-img"
+                    alt=""
                   />
-                </label>
+                  <div>
+                    <h5>@tegan</h5>
+                    <h6>World Peace Builder</h6>
+                  </div>
+                </div>
+                <div class="user-profile">
+                  <img
+                    src="dashboard-project - Copy.png"
+                    class="profile-img"
+                    alt=""
+                  />
+                  <div>
+                    <h5>@morgan</h5>
+                    <h6>Super Cool Project</h6>
+                  </div>
+                </div>
+                <div class="user-profile">
+                  <img
+                    src="dashboard-project - Copy (4).png"
+                    class="profile-img"
+                    alt=""
+                  />
+                  <div>
+                    <h5>@kendall</h5>
+                    <h6>Life Changing App</h6>
+                  </div>
+                </div>
+                <div class="user-profile">
+                  <img
+                    src="dashboard-project - Copy (5).png"
+                    class="profile-img"
+                    alt=""
+                  />
+                  <div>
+                    <h5>@alex</h5>
+                    <h6>No Traffic Maker</h6>
+                  </div>
+                </div>
               </div>
-              <div class="submit-modal-form">
-                <button type="submit" class="btn form-add-button"></button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

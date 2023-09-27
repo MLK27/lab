@@ -2,7 +2,7 @@
 body {
     /* Grid layout for responsive design */
     display: grid;
-    height: 100vh;
+    height: 250vh;
     grid-template-areas: " sidebar nav nav nav" "sidebar article article article" ;
     grid-template-columns: 4rem auto; /* Adjusted to have a fixed sidebar width and the rest auto */
     grid-template-rows: 1rem 1fr 1fr 1fr;
@@ -151,7 +151,7 @@ display: inline;
 /* Article Styles */
 
 .article {
-    min-height: 100%;
+    min-height: 250vh;;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: min-content 1fr;
@@ -217,7 +217,6 @@ display: inline;
 /* Right Article Styles */
 
 .right-aricle {
-    height: 100vh;
     width: fit-content;
     padding-top: 20px;
     padding-right: 50px;
@@ -291,3 +290,5 @@ form div{
     border-radius: 10px;
     width:100%
 }
+
+
